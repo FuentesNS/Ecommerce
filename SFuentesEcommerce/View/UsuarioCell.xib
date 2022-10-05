@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UsuarioCell" rowHeight="164" id="KGk-i7-Jjw" customClass="UsuarioCell" customModule="SFuentesEcommerce" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RvP-Do-rPt" userLabel="PropertiesStacView">
+                        <rect key="frame" x="100" y="0.0" width="200" height="150"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nni-7i-AD8" userLabel="Name">
+                                <rect key="frame" x="68.666666666666657" y="0.0" width="62.666666666666657" height="28.666666666666668"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apellido Paterno" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uB-43-iH3" userLabel="FirstName">
+                                <rect key="frame" x="37.666666666666657" y="28.666666666666671" width="125" height="30.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apellido Materno" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9O-Jv-BvN" userLabel="LastName">
+                                <rect key="frame" x="35.333333333333343" y="59.000000000000007" width="129.33333333333334" height="30.333333333333336"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acB-hw-4W8" userLabel="Email">
+                                <rect key="frame" x="74" y="89.333333333333329" width="52.333333333333343" height="30.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contaseña" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqG-Da-q4U" userLabel="Password">
+                                <rect key="frame" x="59" y="119.66666666666667" width="82" height="30.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="200" id="9vZ-Lx-34J"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Hqh-2d-9XL"/>
+                        </constraints>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lhb-W6-njj">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1LE-ii-Dui" userLabel="PhotoUser">
+                                <rect key="frame" x="0.0" y="1" width="100" height="128.33333333333331"/>
+                                <color key="tintColor" systemColor="systemGrayColor"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usuario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQM-PV-XsX" userLabel="UserName">
+                                <rect key="frame" x="20.666666666666668" y="129.66666666666666" width="58.666666666666657" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="CUk-rV-Trw"/>
+                            <constraint firstItem="1LE-ii-Dui" firstAttribute="top" secondItem="lhb-W6-njj" secondAttribute="top" id="Lhh-2j-VmT"/>
+                            <constraint firstItem="1LE-ii-Dui" firstAttribute="leading" secondItem="lhb-W6-njj" secondAttribute="leading" id="NVH-nP-G1G"/>
+                            <constraint firstAttribute="trailing" secondItem="1LE-ii-Dui" secondAttribute="trailing" id="k1n-4a-uaM"/>
+                            <constraint firstItem="qQM-PV-XsX" firstAttribute="top" secondItem="1LE-ii-Dui" secondAttribute="bottom" id="kep-tl-eM0"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="lhb-W6-njj" secondAttribute="bottom" id="2BX-57-q2P"/>
+                    <constraint firstItem="RvP-Do-rPt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="3Ua-Xu-NqS"/>
+                    <constraint firstItem="lhb-W6-njj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="9SE-JQ-J9D"/>
+                    <constraint firstItem="RvP-Do-rPt" firstAttribute="leading" secondItem="lhb-W6-njj" secondAttribute="trailing" id="U23-YI-KVw"/>
+                    <constraint firstAttribute="bottom" secondItem="RvP-Do-rPt" secondAttribute="bottom" id="bf2-JN-e7m"/>
+                    <constraint firstItem="lhb-W6-njj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="sjL-He-D8J"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="EmailLabel" destination="acB-hw-4W8" id="T0V-BA-TKV"/>
+                <outlet property="FirstNameLabel" destination="8uB-43-iH3" id="u1u-gp-GnF"/>
+                <outlet property="LastNameLabel" destination="f9O-Jv-BvN" id="S6e-y9-YwH"/>
+                <outlet property="NameLabel" destination="nni-7i-AD8" id="WJJ-Ha-jx8"/>
+                <outlet property="PasswordLabel" destination="xqG-Da-q4U" id="7C7-hI-9hr"/>
+                <outlet property="UserNameLabel" destination="qQM-PV-XsX" id="qU9-vj-Lr8"/>
+            </connections>
+            <point key="canvasLocation" x="173.84615384615384" y="51.18483412322275"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="person.circle" catalog="system" width="128" height="123"/>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

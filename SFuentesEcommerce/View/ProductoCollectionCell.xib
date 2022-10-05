@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductoCollectionCell" id="gTV-IL-0wX" customClass="ProductoCollectionCell" customModule="SFuentesEcommerce" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="DQ5-pE-dZE">
+                        <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ImageNotFound" translatesAutoresizingMaskIntoConstraints="NO" id="sgi-8s-9Sj">
+                                <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                                <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLI-AB-n3u" userLabel="Agregar">
+                                <rect key="frame" x="186" y="205.66666666666666" width="54" height="34.333333333333343"/>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" image="cart.badge.plus" catalog="system">
+                                    <color key="baseBackgroundColor" systemColor="secondarySystemFillColor"/>
+                                </buttonConfiguration>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Precio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIa-vw-rB0">
+                                <rect key="frame" x="187" y="15" width="48" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Producto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UrF-2C-bYM">
+                                <rect key="frame" x="15" y="14.999999999999998" width="70" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="aLI-AB-n3u" secondAttribute="trailing" constant="10" id="1fU-Pa-vYp"/>
+                            <constraint firstItem="fIa-vw-rB0" firstAttribute="top" secondItem="DQ5-pE-dZE" secondAttribute="top" constant="15" id="3H4-Ua-tV1"/>
+                            <constraint firstAttribute="bottom" secondItem="sgi-8s-9Sj" secondAttribute="bottom" id="528-Lf-T01"/>
+                            <constraint firstItem="sgi-8s-9Sj" firstAttribute="leading" secondItem="DQ5-pE-dZE" secondAttribute="leading" id="JQK-Nc-zLH"/>
+                            <constraint firstItem="sgi-8s-9Sj" firstAttribute="top" secondItem="DQ5-pE-dZE" secondAttribute="top" id="aer-qr-WAi"/>
+                            <constraint firstItem="UrF-2C-bYM" firstAttribute="leading" secondItem="DQ5-pE-dZE" secondAttribute="leading" constant="15" id="coy-3v-JXp"/>
+                            <constraint firstAttribute="trailing" secondItem="fIa-vw-rB0" secondAttribute="trailing" constant="15" id="fbe-VO-WJT"/>
+                            <constraint firstAttribute="bottom" secondItem="aLI-AB-n3u" secondAttribute="bottom" constant="10" id="qPB-8I-nbc"/>
+                            <constraint firstAttribute="trailing" secondItem="sgi-8s-9Sj" secondAttribute="trailing" id="sUt-ch-ICZ"/>
+                            <constraint firstItem="UrF-2C-bYM" firstAttribute="top" secondItem="DQ5-pE-dZE" secondAttribute="top" constant="15" id="xfM-Qt-aof"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="DQ5-pE-dZE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="01R-6R-N7u"/>
+                <constraint firstItem="DQ5-pE-dZE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="EiW-9A-Tvj"/>
+                <constraint firstAttribute="trailing" secondItem="DQ5-pE-dZE" secondAttribute="trailing" id="HUg-ni-rq7"/>
+                <constraint firstAttribute="bottom" secondItem="DQ5-pE-dZE" secondAttribute="bottom" id="iGs-hz-l57"/>
+            </constraints>
+            <size key="customSize" width="272" height="197"/>
+            <connections>
+                <outlet property="Imagen" destination="sgi-8s-9Sj" id="TIg-GW-wDg"/>
+                <outlet property="NombreLabel" destination="UrF-2C-bYM" id="LXt-zb-5GB"/>
+                <outlet property="PrecioLabel" destination="fIa-vw-rB0" id="vm6-SE-Ua1"/>
+            </connections>
+            <point key="canvasLocation" x="306.15384615384613" y="63.981042654028435"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ImageNotFound" width="99.333335876464844" height="56.333332061767578"/>
+        <image name="cart.badge.plus" catalog="system" width="128" height="103"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
