@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Result{
+class Result{ 
     var Correct: Bool?
     var ErrorMessage: String?
     var Ex: Error?
