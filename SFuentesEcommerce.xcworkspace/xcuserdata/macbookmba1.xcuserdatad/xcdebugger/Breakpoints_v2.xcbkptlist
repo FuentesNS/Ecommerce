@@ -39,65 +39,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "107CB6A9-2191-4C79-8454-485C1FB3A443"
+            uuid = "6389E02C-4623-4059-AC7B-76F5D4FDB1C3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SFuentesEcommerce/Controller/Usuario/ViewController.swift"
+            filePath = "SFuentesEcommerce/Controller/LoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "ActionButton(_:)"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "SingUpButton()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A74477EE-8D16-465B-AA70-2C253F20FAD0"
+            uuid = "6D30B67B-DFA8-4845-A883-DC9A6C1160EF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SFuentesEcommerce/Controller/Usuario/ViewController.swift"
+            filePath = "SFuentesEcommerce/Controller/LoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "ActionButton(_:)"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "SingUpButton()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B1DC88A5-FF81-4207-9F97-F3FA07ECC3CC"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SFuentesEcommerce/Controller/Producto/ProductoViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "imagePicker(_:didFinishPickingMediaWithInfo:)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "65AC7B44-ABE1-4869-B59C-87F3E2B438D7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SFuentesEcommerce/Controller/Producto/ProductoViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "imagePicker(_:didFinishPickingMediaWithInfo:)"
-            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

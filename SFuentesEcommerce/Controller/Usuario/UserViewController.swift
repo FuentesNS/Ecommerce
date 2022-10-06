@@ -13,17 +13,30 @@ class UserViewController: UITableViewController {
     var usuarios: [Usuario] = []
     var usuario = Usuario()
     
+    var isLoadingViewController = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        isLoadingViewController = true
+        ViewLoadSetup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if isLoadingViewController{
+            isLoadingViewController = false
+        } else{
+            ViewLoadSetup()
+        }
+    }
+    
+    func ViewLoadSetup(){
         loadData()
         
         tableView.register(UINib(nibName: "UsuarioCell", bundle: nil), forCellReuseIdentifier: "UsuarioCell")
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+
     
     
     func loadData()

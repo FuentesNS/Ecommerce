@@ -10,6 +10,8 @@ import VisionKit
 
 class ProductoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    let imagePicker = UIImagePickerController()
+
     var IdProducto : Int = 0
     @IBOutlet weak var NombreInput: UITextField!
     @IBOutlet weak var PrecioUnitarioInput: UITextField!
@@ -26,6 +28,7 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         Validate()
+        imagePicker.delegate = self
         
         // Do any additional setup after loading the view.
     }
@@ -33,27 +36,26 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
     
     @IBAction func GetPhoto() {
         
-        let imagePicker = UIImagePickerController()
         
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
-            print("Button capture")
             
             imagePicker.delegate = self
             imagePicker.sourceType = .photoLibrary
             imagePicker.allowsEditing = false
             
-            present(imagePicker, animated: true, completion: nil)
+            self.present(imagePicker, animated: true, completion: nil)
+        } else{
+            // ERROR Camara
         }
         
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        func imagePicker(_ picker: UIImagePickerController!, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]){
-            
-            let Photo = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-            
-            PhotoProducto?.image = Photo
-            
-            self.dismiss(animated: true, completion: nil)
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            PhotoProducto.image = image //Obtiene la informacion de la foto y la almacena
         }
+        imagePicker.dismiss(animated: true, completion: nil)
     }
     
     
@@ -69,7 +71,7 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
         producto.Descripcion = DescripcionInput.text
         
         
-        let textButton = sender.currentTitle
+        //let textButton = sender.currentTitle
         
         if sender.titleLabel?.text == "Agregar"{
             // function add product

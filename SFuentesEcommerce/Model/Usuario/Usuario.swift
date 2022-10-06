@@ -199,6 +199,45 @@ class Usuario{
     }
     
     
+    
+    static func GetByEmail(_ Email: String) -> Result{
+        let result = Result()
+        
+        let query = #"SELECT IdUsuario, UserName, Nombre, ApellidoPaterno, ApellidoMaterno, Email, Password FROM Usuario WHERE Email = '\#(Email)';"#
+        
+        
+        var statement: OpaquePointer? = nil
+        let conexion = Conexion.init()
+        
+        do{
+            if sqlite3_prepare_v2(conexion.db, query, -1, &statement, nil) == SQLITE_OK{
+                
+                if sqlite3_step(statement) == SQLITE_ROW{
+                    
+                    let usuario = Usuario()
+                    
+                    usuario.IdUsuario = Int(sqlite3_column_int(statement, 0))
+                    usuario.UserName = String(cString: sqlite3_column_text(statement, 1))
+                    usuario.Nombre = String(cString: sqlite3_column_text(statement, 2))
+                    usuario.ApellidoPaterno = String(cString: sqlite3_column_text(statement, 3))
+                    usuario.ApellidoMaterno = String(cString: sqlite3_column_text(statement, 4))
+                    usuario.Email = String(cString: sqlite3_column_text(statement, 5))
+                    usuario.Password = String(cString: sqlite3_column_text(statement, 6))
+                    
+                    result.Correct = true
+
+                    result.Object = usuario
+                }
+            }
+            result.Correct = false
+        }catch let error{
+            result.Correct = false
+            result.Ex = error
+            result.ErrorMessage = error.localizedDescription
+            
+        }
+        return result
+    }
 }
 
 

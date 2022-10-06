@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sty-bo-0iG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1ke-jH-AX9">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -428,6 +428,9 @@
                                         <color key="tintColor" systemColor="tintColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="Iniciar Sesión "/>
+                                        <connections>
+                                            <action selector="SingUpButton" destination="1ke-jH-AX9" eventType="touchUpInside" id="bQb-9F-DgW"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fae-5f-vkJ">
                                         <rect key="frame" x="60.666666666666657" y="5" width="271.66666666666674" height="34.333333333333336"/>
@@ -468,16 +471,40 @@
                             <constraint firstItem="MHU-bq-xGT" firstAttribute="bottom" secondItem="zMp-T2-pRt" secondAttribute="bottom" constant="13" id="mFn-dH-nHr"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="FZQ-nw-ySo"/>
+                    <connections>
+                        <outlet property="EmailInput" destination="qY7-1b-TAH" id="hgd-Xe-osI"/>
+                        <outlet property="PasswordInput" destination="kCZ-jJ-SXJ" id="esH-Dl-Fkp"/>
+                        <segue destination="cWN-px-EvR" kind="presentation" identifier="Login" id="xvG-F3-JH7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p2b-E9-e8v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1515.2671755725189" y="786.61971830985919"/>
+            <point key="canvasLocation" x="-2453" y="777"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="88h-TV-8Ri">
+            <objects>
+                <navigationController modalPresentationStyle="fullScreen" id="cWN-px-EvR" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Vyt-vO-goo"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="96N-E7-u1Z">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="sty-bo-0iG" kind="relationship" relationship="rootViewController" id="nE3-Mw-st2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MTn-Ul-STj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1384" y="777"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jCQ-QT-4XL">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="sty-bo-0iG" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="FEI-DT-ZYQ"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="or3-Bf-tLB">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
