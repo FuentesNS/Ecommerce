@@ -227,9 +227,10 @@ class Usuario{
                     result.Correct = true
 
                     result.Object = usuario
+                } else{
+                    result.Correct = false
                 }
             }
-            result.Correct = false
         }catch let error{
             result.Correct = false
             result.Ex = error

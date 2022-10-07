@@ -3,6 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,12 +26,15 @@
                                 <color key="backgroundColor" systemColor="secondaryLabelColor"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLI-AB-n3u" userLabel="Agregar">
-                                <rect key="frame" x="186" y="205.66666666666666" width="54" height="34.333333333333343"/>
-                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                <rect key="frame" x="196" y="215.66666666666666" width="54" height="34.333333333333343"/>
+                                <color key="tintColor" name="ButtomNavigationColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" image="cart.badge.plus" catalog="system">
                                     <color key="baseBackgroundColor" systemColor="secondarySystemFillColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="AddToTheCart" destination="gTV-IL-0wX" eventType="touchUpInside" id="Ahd-Dq-1Kd"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Precio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIa-vw-rB0">
                                 <rect key="frame" x="187" y="15" width="48" height="20"/>
@@ -47,14 +51,14 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="aLI-AB-n3u" secondAttribute="trailing" constant="10" id="1fU-Pa-vYp"/>
+                            <constraint firstAttribute="trailing" secondItem="aLI-AB-n3u" secondAttribute="trailing" id="1fU-Pa-vYp"/>
                             <constraint firstItem="fIa-vw-rB0" firstAttribute="top" secondItem="DQ5-pE-dZE" secondAttribute="top" constant="15" id="3H4-Ua-tV1"/>
                             <constraint firstAttribute="bottom" secondItem="sgi-8s-9Sj" secondAttribute="bottom" id="528-Lf-T01"/>
                             <constraint firstItem="sgi-8s-9Sj" firstAttribute="leading" secondItem="DQ5-pE-dZE" secondAttribute="leading" id="JQK-Nc-zLH"/>
                             <constraint firstItem="sgi-8s-9Sj" firstAttribute="top" secondItem="DQ5-pE-dZE" secondAttribute="top" id="aer-qr-WAi"/>
                             <constraint firstItem="UrF-2C-bYM" firstAttribute="leading" secondItem="DQ5-pE-dZE" secondAttribute="leading" constant="15" id="coy-3v-JXp"/>
                             <constraint firstAttribute="trailing" secondItem="fIa-vw-rB0" secondAttribute="trailing" constant="15" id="fbe-VO-WJT"/>
-                            <constraint firstAttribute="bottom" secondItem="aLI-AB-n3u" secondAttribute="bottom" constant="10" id="qPB-8I-nbc"/>
+                            <constraint firstAttribute="bottom" secondItem="aLI-AB-n3u" secondAttribute="bottom" id="qPB-8I-nbc"/>
                             <constraint firstAttribute="trailing" secondItem="sgi-8s-9Sj" secondAttribute="trailing" id="sUt-ch-ICZ"/>
                             <constraint firstItem="UrF-2C-bYM" firstAttribute="top" secondItem="DQ5-pE-dZE" secondAttribute="top" constant="15" id="xfM-Qt-aof"/>
                         </constraints>
@@ -80,6 +84,9 @@
     <resources>
         <image name="ImageNotFound" width="99.333335876464844" height="56.333332061767578"/>
         <image name="cart.badge.plus" catalog="system" width="128" height="103"/>
+        <namedColor name="ButtomNavigationColor">
+            <color red="0.14499999582767487" green="0.42699998617172241" blue="0.5220000147819519" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
@@ -88,9 +95,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

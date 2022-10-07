@@ -39,32 +39,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6389E02C-4623-4059-AC7B-76F5D4FDB1C3"
+            uuid = "118789E3-D1D8-42F8-A949-A62A5641DC09"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SFuentesEcommerce/Controller/LoginViewController.swift"
+            filePath = "SFuentesEcommerce/Controller/Producto/ProductoCollectionCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "SingUpButton()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6D30B67B-DFA8-4845-A883-DC9A6C1160EF"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SFuentesEcommerce/Controller/LoginViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "SingUpButton()"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "AddToTheCart()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
