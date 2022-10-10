@@ -33,6 +33,13 @@
 		F79D64DD28E39DB300B13087 /* ProductoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79D64DC28E39DB300B13087 /* ProductoTableViewController.swift */; };
 		F79D64E028E3A2B900B13087 /* ProductoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79D64DE28E3A2B800B13087 /* ProductoCell.swift */; };
 		F79D64E128E3A2B900B13087 /* ProductoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F79D64DF28E3A2B900B13087 /* ProductoCell.xib */; };
+		F7A1E18828F4A05D001F1E07 /* AreaCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A1E18728F4A05D001F1E07 /* AreaCollectionViewController.swift */; };
+		F7A1E19328F4BF0B001F1E07 /* AreaCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A1E19128F4BF0B001F1E07 /* AreaCollectionCell.swift */; };
+		F7A1E19428F4BF0B001F1E07 /* AreaCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7A1E19228F4BF0B001F1E07 /* AreaCollectionCell.xib */; };
+		F7A1E19628F4D29E001F1E07 /* DepartamentoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A1E19528F4D29E001F1E07 /* DepartamentoCollectionViewController.swift */; };
+		F7A1E19928F4D535001F1E07 /* DepartamentoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A1E19728F4D535001F1E07 /* DepartamentoCollectionCell.swift */; };
+		F7A1E19A28F4D535001F1E07 /* DepartamentoCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7A1E19828F4D535001F1E07 /* DepartamentoCollectionCell.xib */; };
+		F7A6DA8228F0E94E0046647F /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7A6DA8128F0E94E0046647F /* iOSDropDown.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +73,13 @@
 		F79D64DC28E39DB300B13087 /* ProductoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductoTableViewController.swift; sourceTree = "<group>"; };
 		F79D64DE28E3A2B800B13087 /* ProductoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductoCell.swift; sourceTree = "<group>"; };
 		F79D64DF28E3A2B900B13087 /* ProductoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductoCell.xib; sourceTree = "<group>"; };
+		F7A1E18728F4A05D001F1E07 /* AreaCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaCollectionViewController.swift; sourceTree = "<group>"; };
+		F7A1E19128F4BF0B001F1E07 /* AreaCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaCollectionCell.swift; sourceTree = "<group>"; };
+		F7A1E19228F4BF0B001F1E07 /* AreaCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AreaCollectionCell.xib; sourceTree = "<group>"; };
+		F7A1E19528F4D29E001F1E07 /* DepartamentoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartamentoCollectionViewController.swift; sourceTree = "<group>"; };
+		F7A1E19728F4D535001F1E07 /* DepartamentoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartamentoCollectionCell.swift; sourceTree = "<group>"; };
+		F7A1E19828F4D535001F1E07 /* DepartamentoCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DepartamentoCollectionCell.xib; sourceTree = "<group>"; };
+		F7A6DA8128F0E94E0046647F /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7A6DA8228F0E94E0046647F /* iOSDropDown.framework in Frameworks */,
 				555426A21EC0FCB16AACE207 /* Pods_SFuentesEcommerce.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,6 +107,7 @@
 		ABCD314056906E7426D34CD5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F7A6DA8128F0E94E0046647F /* iOSDropDown.framework */,
 				1A53149A72FED2F831AAF571 /* Pods_SFuentesEcommerce.framework */,
 			);
 			name = Frameworks;
@@ -159,6 +175,9 @@
 				F783FBFA28DE30010004E356 /* UsuarioCell.xib */,
 				F79D64DF28E3A2B900B13087 /* ProductoCell.xib */,
 				F7270F5B28ECB0A100D27303 /* ProductoCollectionCell.xib */,
+				F7A1E19228F4BF0B001F1E07 /* AreaCollectionCell.xib */,
+				F7A1E19728F4D535001F1E07 /* DepartamentoCollectionCell.swift */,
+				F7A1E19828F4D535001F1E07 /* DepartamentoCollectionCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -195,13 +214,48 @@
 		F79D64E528E3A32200B13087 /* Producto */ = {
 			isa = PBXGroup;
 			children = (
-				F79D64DA28E39D7600B13087 /* ProductoViewController.swift */,
-				F79D64DC28E39DB300B13087 /* ProductoTableViewController.swift */,
-				F79D64DE28E3A2B800B13087 /* ProductoCell.swift */,
-				F7270F5E28ECB21800D27303 /* ProductoCollectionViewController.swift */,
-				F7270F5A28ECB0A100D27303 /* ProductoCollectionCell.swift */,
+				F7A1E19028F4A224001F1E07 /* ViewController */,
+				F7A1E18F28F4A19E001F1E07 /* CellView */,
+				F7A1E18E28F4A189001F1E07 /* CollectionController */,
+				F7A1E18D28F4A166001F1E07 /* TableController */,
 			);
 			path = Producto;
+			sourceTree = "<group>";
+		};
+		F7A1E18D28F4A166001F1E07 /* TableController */ = {
+			isa = PBXGroup;
+			children = (
+				F79D64DC28E39DB300B13087 /* ProductoTableViewController.swift */,
+			);
+			path = TableController;
+			sourceTree = "<group>";
+		};
+		F7A1E18E28F4A189001F1E07 /* CollectionController */ = {
+			isa = PBXGroup;
+			children = (
+				F7270F5E28ECB21800D27303 /* ProductoCollectionViewController.swift */,
+				F7A1E18728F4A05D001F1E07 /* AreaCollectionViewController.swift */,
+				F7A1E19528F4D29E001F1E07 /* DepartamentoCollectionViewController.swift */,
+			);
+			path = CollectionController;
+			sourceTree = "<group>";
+		};
+		F7A1E18F28F4A19E001F1E07 /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+				F7270F5A28ECB0A100D27303 /* ProductoCollectionCell.swift */,
+				F7A1E19128F4BF0B001F1E07 /* AreaCollectionCell.swift */,
+				F79D64DE28E3A2B800B13087 /* ProductoCell.swift */,
+			);
+			path = CellView;
+			sourceTree = "<group>";
+		};
+		F7A1E19028F4A224001F1E07 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F79D64DA28E39D7600B13087 /* ProductoViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,10 +320,12 @@
 			files = (
 				F79D64E128E3A2B900B13087 /* ProductoCell.xib in Resources */,
 				F783FBFC28DE30010004E356 /* UsuarioCell.xib in Resources */,
+				F7A1E19428F4BF0B001F1E07 /* AreaCollectionCell.xib in Resources */,
 				F76F905928DA3C9B00C8919A /* LaunchScreen.storyboard in Resources */,
 				F7270F5D28ECB0A100D27303 /* ProductoCollectionCell.xib in Resources */,
 				F76F905628DA3C9B00C8919A /* Assets.xcassets in Resources */,
 				F76F905128DA3C9A00C8919A /* Main.storyboard in Resources */,
+				F7A1E19A28F4D535001F1E07 /* DepartamentoCollectionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,14 +381,18 @@
 				F76F904E28DA3C9A00C8919A /* ViewController.swift in Sources */,
 				F79D64D928E3968E00B13087 /* Departamento.swift in Sources */,
 				F7270F5C28ECB0A100D27303 /* ProductoCollectionCell.swift in Sources */,
+				F7A1E19928F4D535001F1E07 /* DepartamentoCollectionCell.swift in Sources */,
 				F712FAEB28DD223B0082A2A2 /* UserViewController.swift in Sources */,
 				F70D849728EDF4CE00DF92E8 /* LoginViewController.swift in Sources */,
+				F7A1E18828F4A05D001F1E07 /* AreaCollectionViewController.swift in Sources */,
 				F76F904A28DA3C9A00C8919A /* AppDelegate.swift in Sources */,
 				F783FBFB28DE30010004E356 /* UsuarioCell.swift in Sources */,
 				F79D64D728E3967A00B13087 /* Proveedor.swift in Sources */,
 				F705EF2A28DB94A20092859D /* Conexion.swift in Sources */,
+				F7A1E19628F4D29E001F1E07 /* DepartamentoCollectionViewController.swift in Sources */,
 				F7270F5F28ECB21800D27303 /* ProductoCollectionViewController.swift in Sources */,
 				F79D64DD28E39DB300B13087 /* ProductoTableViewController.swift in Sources */,
+				F7A1E19328F4BF0B001F1E07 /* AreaCollectionCell.swift in Sources */,
 				F76F904C28DA3C9A00C8919A /* SceneDelegate.swift in Sources */,
 				F712FAE928DCCFBA0082A2A2 /* Result.swift in Sources */,
 				F79D64D328E3954600B13087 /* Producto.swift in Sources */,

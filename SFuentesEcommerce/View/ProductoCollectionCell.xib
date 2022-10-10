@@ -36,31 +36,53 @@
                                     <action selector="AddToTheCart" destination="gTV-IL-0wX" eventType="touchUpInside" id="Ahd-Dq-1Kd"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Precio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIa-vw-rB0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Precio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIa-vw-rB0" userLabel="PrecioLabel">
                                 <rect key="frame" x="187" y="15" width="48" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Producto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UrF-2C-bYM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Producto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UrF-2C-bYM" userLabel="NombreLabel">
                                 <rect key="frame" x="15" y="14.999999999999998" width="70" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cantidad:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5JP-wI-cZt" userLabel="CantidadLabel">
+                                <rect key="frame" x="0.0" y="229" width="74" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5E-Qe-bgb" userLabel="NumeroCantidadLabel">
+                                <rect key="frame" x="79" y="229" width="11" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ux3-2p-E2C">
+                                <rect key="frame" x="0.0" y="197" width="94" height="32"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </stepper>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="aLI-AB-n3u" secondAttribute="trailing" id="1fU-Pa-vYp"/>
                             <constraint firstItem="fIa-vw-rB0" firstAttribute="top" secondItem="DQ5-pE-dZE" secondAttribute="top" constant="15" id="3H4-Ua-tV1"/>
                             <constraint firstAttribute="bottom" secondItem="sgi-8s-9Sj" secondAttribute="bottom" id="528-Lf-T01"/>
+                            <constraint firstItem="ux3-2p-E2C" firstAttribute="leading" secondItem="DQ5-pE-dZE" secondAttribute="leading" id="BkH-SV-NuC"/>
                             <constraint firstItem="sgi-8s-9Sj" firstAttribute="leading" secondItem="DQ5-pE-dZE" secondAttribute="leading" id="JQK-Nc-zLH"/>
+                            <constraint firstItem="U5E-Qe-bgb" firstAttribute="leading" secondItem="5JP-wI-cZt" secondAttribute="trailing" constant="5" id="VdA-Xh-f8J"/>
+                            <constraint firstItem="5JP-wI-cZt" firstAttribute="top" secondItem="ux3-2p-E2C" secondAttribute="bottom" id="X8A-RM-oSR"/>
                             <constraint firstItem="sgi-8s-9Sj" firstAttribute="top" secondItem="DQ5-pE-dZE" secondAttribute="top" id="aer-qr-WAi"/>
                             <constraint firstItem="UrF-2C-bYM" firstAttribute="leading" secondItem="DQ5-pE-dZE" secondAttribute="leading" constant="15" id="coy-3v-JXp"/>
                             <constraint firstAttribute="trailing" secondItem="fIa-vw-rB0" secondAttribute="trailing" constant="15" id="fbe-VO-WJT"/>
+                            <constraint firstItem="5JP-wI-cZt" firstAttribute="leading" secondItem="DQ5-pE-dZE" secondAttribute="leading" id="ot1-qP-sF9"/>
                             <constraint firstAttribute="bottom" secondItem="aLI-AB-n3u" secondAttribute="bottom" id="qPB-8I-nbc"/>
                             <constraint firstAttribute="trailing" secondItem="sgi-8s-9Sj" secondAttribute="trailing" id="sUt-ch-ICZ"/>
+                            <constraint firstAttribute="bottom" secondItem="U5E-Qe-bgb" secondAttribute="bottom" id="vGf-0I-uwg"/>
                             <constraint firstItem="UrF-2C-bYM" firstAttribute="top" secondItem="DQ5-pE-dZE" secondAttribute="top" constant="15" id="xfM-Qt-aof"/>
+                            <constraint firstAttribute="bottom" secondItem="5JP-wI-cZt" secondAttribute="bottom" id="ye7-wh-YtI"/>
                         </constraints>
                     </view>
                 </subviews>

@@ -143,7 +143,7 @@ class Producto{
         return result
     }
     
-    static func GetById(IdProducto: Int) -> Result{
+    static func GetById(_ IdProducto: Int) -> Result{
         let result = Result()
         
         let query = "SELECT IdProducto, Nombre, PrecioUnitario, Stock, IdProveedor, IdDepartamento, Descripcion FROM Producto WHERE IdProducto = \(IdProducto);"

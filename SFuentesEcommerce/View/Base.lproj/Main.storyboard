@@ -290,12 +290,12 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Id proveedor" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bnj-sG-wVP">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Proveedor" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bnj-sG-wVP" customClass="JRDropDown">
                                                 <rect key="frame" x="0.0" y="121.3333333333333" width="393" height="23.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Id departamento" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P9h-EA-Cey">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Departamento" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P9h-EA-Cey" customClass="JRDropDown">
                                                 <rect key="frame" x="0.0" y="154.66666666666669" width="393" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -356,12 +356,12 @@
                     <navigationItem key="navigationItem" id="RFS-kj-HGn"/>
                     <connections>
                         <outlet property="ActionButton" destination="UOR-OI-tyy" id="Bz8-ce-YdX"/>
+                        <outlet property="DepartamentoDropDown" destination="P9h-EA-Cey" id="aES-Tu-Ujq"/>
                         <outlet property="DescripcionInput" destination="j4v-Py-4bD" id="koH-to-ckH"/>
-                        <outlet property="IdDepartamentoInput" destination="P9h-EA-Cey" id="nle-M6-1Ji"/>
-                        <outlet property="IdProveedorInput" destination="bnj-sG-wVP" id="Ukm-eZ-7w8"/>
                         <outlet property="NombreInput" destination="n9l-dj-oqf" id="Bcv-AG-5pQ"/>
                         <outlet property="PhotoProducto" destination="qOE-Gu-Wjc" id="SEO-dl-dg3"/>
                         <outlet property="PrecioUnitarioInput" destination="QAn-CJ-DFG" id="bPB-sG-QGF"/>
+                        <outlet property="ProveedorDropDown" destination="bnj-sG-wVP" id="Toj-gZ-2Nk"/>
                         <outlet property="StockInput" destination="vHI-5W-6nb" id="5Zg-1S-cbI"/>
                     </connections>
                 </viewController>
@@ -516,6 +516,7 @@
                         <segue destination="1e1-A2-hf9" kind="relationship" relationship="viewControllers" id="GQR-ao-MCO"/>
                         <segue destination="2ov-qb-s5x" kind="relationship" relationship="viewControllers" id="m8w-fZ-LQS"/>
                         <segue destination="qcg-IX-E0F" kind="relationship" relationship="viewControllers" id="G7P-Cb-i1D"/>
+                        <segue destination="ViT-b5-Fne" kind="relationship" relationship="viewControllers" id="Abt-FF-MTO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L7O-WA-jZM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -602,8 +603,8 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="AkB-r9-9iJ">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="Ezu-tl-mUW">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="6MH-9h-4pl">
-                                <rect key="frame" x="-37" y="-17" width="50" height="44"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="6MH-9h-4pl">
+                                <rect key="frame" x="323.33333333333331" y="0.0" width="53.666666666666686" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" name="ButtomNavigationColor"/>
                                 <state key="normal" title="Button"/>
@@ -615,6 +616,78 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8cj-bE-6RK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1408" y="1451"/>
+        </scene>
+        <!--AreaNavigationController-->
+        <scene sceneID="dBk-Sw-iwZ">
+            <objects>
+                <navigationController title="AreaNavigationController" id="ViT-b5-Fne" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Areas" selectedImage="square.grid.3x3.fill.square" catalog="system" id="tkr-fB-PCB"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iqR-03-7lG">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="EoC-K6-8QJ" kind="relationship" relationship="rootViewController" id="gui-WQ-mHG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H5J-Jk-7sF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="540" y="2149"/>
+        </scene>
+        <!--AreaCollectionViewController-->
+        <scene sceneID="xwB-Uv-Rn1">
+            <objects>
+                <collectionViewController title="AreaCollectionViewController" id="EoC-K6-8QJ" customClass="AreaCollectionViewController" customModule="SFuentesEcommerce" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" dataMode="prototypes" id="xQa-VG-oJp">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jp5-1Z-2zI">
+                            <size key="itemSize" width="250" height="250"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                        <connections>
+                            <outlet property="dataSource" destination="EoC-K6-8QJ" id="trM-Mn-hQC"/>
+                            <outlet property="delegate" destination="EoC-K6-8QJ" id="ZXt-gh-y18"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="QXw-j6-cbC"/>
+                    <connections>
+                        <segue destination="g19-36-9I1" kind="show" identifier="AreaSegues" id="zot-Lp-dx8"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aXy-lt-O1q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1415" y="2149"/>
+        </scene>
+        <!--Departamento Collection View Controller-->
+        <scene sceneID="MUV-zp-I2O">
+            <objects>
+                <collectionViewController id="g19-36-9I1" customClass="DepartamentoCollectionViewController" customModule="SFuentesEcommerce" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" dataMode="prototypes" id="RQA-2G-DVH">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qEe-bb-mDu">
+                            <size key="itemSize" width="250" height="250"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                        <connections>
+                            <outlet property="dataSource" destination="g19-36-9I1" id="W0x-Cy-DDw"/>
+                            <outlet property="delegate" destination="g19-36-9I1" id="TIT-Gp-pVB"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="I4O-AZ-8Bs"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jhK-wV-h8i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2283" y="2149"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="rdQ-wB-x3Y">
@@ -647,7 +720,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="DLR-t5-i2K"/>
-        <segue reference="bg2-mi-Tey"/>
+        <segue reference="aDD-o2-eh0"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="ImageLogo" width="426.66665649414062" height="331.33334350585938"/>
@@ -656,6 +729,7 @@
         <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="person.crop.circle.fill.badge.plus" catalog="system" width="128" height="114"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="square.grid.3x3.fill.square" catalog="system" width="128" height="114"/>
         <namedColor name="BackgroundButtomNavigationColor">
             <color red="0.875" green="0.9649999737739563" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

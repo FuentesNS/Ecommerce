@@ -8,7 +8,7 @@
 import Foundation
 
 class Result{ 
-    var Correct: Bool?
+    var Correct: Bool? 
     var ErrorMessage: String?
     var Ex: Error?
     var Object: Any?

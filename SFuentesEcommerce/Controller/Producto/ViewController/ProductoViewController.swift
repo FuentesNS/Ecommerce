@@ -7,29 +7,46 @@
 
 import UIKit
 import VisionKit
+import iOSDropDown
 
 class ProductoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let imagePicker = UIImagePickerController()
 
-    var IdProducto : Int = 0
     @IBOutlet weak var NombreInput: UITextField!
     @IBOutlet weak var PrecioUnitarioInput: UITextField!
     @IBOutlet weak var StockInput: UITextField!
-    @IBOutlet weak var IdProveedorInput: UITextField!
-    @IBOutlet weak var IdDepartamentoInput: UITextField!
+    //@IBOutlet weak var IdProveedorInput: UITextField!
+    //@IBOutlet weak var IdDepartamentoInput: UITextField!
     @IBOutlet weak var DescripcionInput: UITextField!
-    
     @IBOutlet weak var ActionButton: UIButton!
-    
     @IBOutlet weak var PhotoProducto: UIImageView!
+    @IBOutlet weak var ProveedorDropDown: DropDown!
+    @IBOutlet weak var DepartamentoDropDown: DropDown!
     
+    
+    
+    var IdProducto : Int = 0
+    var arrayProveedor: [String] = []
+    var arrayDepartamento: [String] = []
+    var arrayId: [String] = []
+    var proveedores: [Proveedor] = []
+    var departamentos: [Departamento] = []
+    var result = Result()
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         Validate()
         imagePicker.delegate = self
         
+        LoadDataProveedor()
+        ProveedorDropDown.optionArray = arrayProveedor
+
+        LoadDataDepartamento()
+        DepartamentoDropDown.optionArray = arrayDepartamento
+
         // Do any additional setup after loading the view.
     }
     
@@ -45,7 +62,8 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
             
             self.present(imagePicker, animated: true, completion: nil)
         } else{
-            // ERROR Camara
+            print("Ocurrio un error al abrir la galeria, o la camara del dispositivo")
+            
         }
         
     }
@@ -66,8 +84,11 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
         producto.Nombre = NombreInput.text
         producto.PrecioUnitario = Int(PrecioUnitarioInput.text!)
         producto.Stock = Int(StockInput.text!)
-        producto.proveedor.IdProveerdor = Int(IdProveedorInput.text!)
-        producto.departamento.IdDepartamento = Int(IdDepartamentoInput.text!)
+        
+        // propiedad de text field
+        //producto.proveedor.IdProveerdor = Int(IdProveedorInput.text!)
+        
+        //producto.departamento.IdDepartamento = Int(IdDepartamentoInput.text!)
         producto.Descripcion = DescripcionInput.text
         
         
@@ -87,7 +108,7 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
  
     func Validate(){
         if IdProducto != 0{
-            let result: Result = Producto.GetById(IdProducto: IdProducto)
+            let result: Result = Producto.GetById(IdProducto)
             if result.Correct!{
                 
                 let producto = result.Object as! Producto
@@ -96,8 +117,11 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
                 PrecioUnitarioInput.text = String(producto.PrecioUnitario!)
                 StockInput.text
                 = String(producto.Stock!)
-                IdProveedorInput.text = String(producto.proveedor.IdProveerdor!)
-                IdDepartamentoInput.text = String(producto.departamento.IdDepartamento!)
+                
+                // Propiedad siendo asignada de text field
+                
+                //IdProveedorInput.text = String(producto.proveedor.IdProveerdor!)
+                //IdDepartamentoInput.text = String(producto.departamento.IdDepartamento!)
                 
                 DescripcionInput.text = producto.Descripcion
                 
@@ -107,6 +131,30 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
             }else{
                 ActionButton.setTitle("Agregar", for: .normal)
                 ActionButton.backgroundColor = .green
+            }
+        }
+    }
+    
+    
+    func LoadDataProveedor(){
+        result = try! Proveedor.GetAll()
+        if result.Correct!{
+            proveedores = result.Objects as! [Proveedor]
+            for proveedor in proveedores {
+
+                    arrayProveedor.append(proveedor.Nombre!)
+            }
+        }
+    }
+    
+    func LoadDataDepartamento(){
+        result = try! Departamento.GetAll()
+        if result.Correct!{
+            departamentos = result.Objects as! [Departamento]
+            for departamento in departamentos {
+                
+                arrayDepartamento.append(departamento.Nombre!)
+                
             }
         }
     }

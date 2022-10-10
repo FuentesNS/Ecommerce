@@ -15,6 +15,10 @@ class ProductoCollectionCell: UICollectionViewCell {
     @IBOutlet weak var PrecioLabel: UILabel!
     @IBOutlet weak var Imagen: UIImageView!
     
+    var result = Result()
+    let producto = Producto()
+    var idProducto = 0
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,6 +27,7 @@ class ProductoCollectionCell: UICollectionViewCell {
     
     @IBAction func AddToTheCart() {
         
+        result = try! Producto.GetById(idProducto)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         let context = appDelegate.persistentContainer.viewContext
