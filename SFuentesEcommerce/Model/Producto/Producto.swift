@@ -47,15 +47,13 @@ class Producto{
                 
                 if sqlite3_step(statement) == SQLITE_DONE{
                     result.Correct = true
-                    
                     print("Producto agregado correctamente")
                 }else{
-                    result.Correct = false
-                    
-                    print("Ocurrio un error al agregar el Producto")
+                    let errmsg = String(cString: sqlite3_errmsg(conexion.db))
+                    print("Ocurrion un fallo \(errmsg)")
                 }
             } else {
-                print("Ocurrion un fallo")
+                print("Ocurrion un fallo ")
             }
             
         }catch let error{
@@ -63,8 +61,12 @@ class Producto{
             result.Ex = error
             result.ErrorMessage = error.localizedDescription
         }
+        sqlite3_finalize(statement)
+        sqlite3_close(conexion.db)
         return result
     }
+    
+    
     
     
     static func Update(_ producto: Producto) ->Result{
@@ -72,6 +74,8 @@ class Producto{
         
         return result
     }
+    
+    
     
     
     static func Delete(_ IdProducto: Int)-> Result{
@@ -97,6 +101,7 @@ class Producto{
             result.Ex = error
             result.ErrorMessage = error.localizedDescription
         }
+        sqlite3_close(conexion.db)
         return result
     }
     
@@ -139,7 +144,7 @@ class Producto{
             result.Ex = error
             result.ErrorMessage = error.localizedDescription
         }
-        
+        sqlite3_close(conexion.db)
         return result
     }
     
@@ -176,7 +181,57 @@ class Producto{
             result.Ex = error
             result.ErrorMessage = error.localizedDescription
         }
+        sqlite3_close(conexion.db)
         return result
     }
     
+    
+    
+    static func GetByIdDepartamento(_ IdDepartamento: Int) -> Result{
+        let result = Result()
+        
+        let query = "SELECT  Producto.IdProducto, Producto.Nombre, Producto.PrecioUnitario, Producto.Stock, Proveedor.IdProveedor, Proveedor.Nombre, Departamento.IdDepartamento, Departamento.Nombre, Area.IdArea, Area.Nombre, Producto.Descripcion FROM Producto INNER JOIN Departamento ON (Producto.IdDepartamento = Departamento.IdDepartamento) INNER JOIN Proveedor ON (Producto.IdProveedor = Proveedor.IdProveedor)INNER JOIN Area ON (Departamento.IdArea = Area.IdArea) WHERE Producto.IdDepartamento =  \(IdDepartamento);"
+        
+        var statement: OpaquePointer? = nil
+        let conexion = Conexion.init()
+        
+        do{
+            if sqlite3_prepare_v2(conexion.db, query, -1, &statement, nil) == SQLITE_OK{
+                
+                result.Objects = [Any]()
+
+                
+                while sqlite3_step(statement) == SQLITE_ROW{
+                    
+                    let producto = Producto()
+                    
+                    producto.IdProducto = Int(sqlite3_column_int(statement, 0))
+                    producto.Nombre = String(cString: sqlite3_column_text(statement!, 1))
+                    producto.PrecioUnitario = Int(sqlite3_column_int(statement, 2))
+                    producto.Stock = Int(sqlite3_column_int(statement, 3))
+                    
+                    producto.proveedor.IdProveerdor = Int(sqlite3_column_int(statement, 4))
+                    producto.proveedor.Nombre = String(cString: sqlite3_column_text(statement!, 5))
+
+                    producto.departamento.IdDepartamento = Int(sqlite3_column_int(statement, 6))
+                    producto.departamento.Nombre = String(cString: sqlite3_column_text(statement!, 7))
+
+                    producto.departamento.area.IdArea = Int(sqlite3_column_int(statement, 8))
+                    producto.departamento.area.Nombre = String(cString: sqlite3_column_text(statement!, 9))
+                    
+                    producto.Descripcion = String(cString: sqlite3_column_text(statement!, 10))
+                    
+                    result.Objects?.append(producto)
+                }
+                result.Correct = true
+            }
+            
+        }catch let error{
+            result.Correct = false
+            result.Ex = error
+            result.ErrorMessage = error.localizedDescription
+        }
+        sqlite3_close(conexion.db)
+        return result
+    }
 }

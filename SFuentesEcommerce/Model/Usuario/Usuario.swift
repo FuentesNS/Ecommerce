@@ -42,15 +42,19 @@ class Usuario{
                     result.Correct = true
                     print("Usuario agregado correctamente")
                 }else{
-                    print("Ocurrio un error")
+                    let errmsg = String(cString: sqlite3_errmsg(conexion.db))
+                    print("Ocurrion un fallo \(errmsg)")
                 }
-                
+            }else{
+                print("Ocurrio un error")
             }
         }catch let error{
             result.Correct = false
             result.Ex = error
             result.ErrorMessage = error.localizedDescription
         }
+        sqlite3_finalize(statement)
+        sqlite3_close(conexion.db)
         return result
     }
     
@@ -87,6 +91,8 @@ class Usuario{
             result.Ex = error
             result.ErrorMessage = error.localizedDescription
         }
+        sqlite3_finalize(statement)
+        sqlite3_close(conexion.db)
         return result
     }
     
@@ -115,6 +121,8 @@ class Usuario{
             result.Ex = error
             result.ErrorMessage = error.localizedDescription
         }
+        sqlite3_finalize(statement)
+        sqlite3_close(conexion.db)
         return result
     }
     
@@ -156,7 +164,8 @@ class Usuario{
             result.Ex = error
             result.ErrorMessage = error.localizedDescription
         }
-        
+        sqlite3_finalize(statement)
+        sqlite3_close(conexion.db)
         return result
     }
     
@@ -195,6 +204,8 @@ class Usuario{
             result.ErrorMessage = error.localizedDescription
             
         }
+        sqlite3_finalize(statement)
+        sqlite3_close(conexion.db)
         return result
     }
     
@@ -237,6 +248,8 @@ class Usuario{
             result.ErrorMessage = error.localizedDescription
             
         }
+        sqlite3_finalize(statement)
+        sqlite3_close(conexion.db)
         return result
     }
 }

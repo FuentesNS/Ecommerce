@@ -40,6 +40,7 @@
 		F7A1E19928F4D535001F1E07 /* DepartamentoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A1E19728F4D535001F1E07 /* DepartamentoCollectionCell.swift */; };
 		F7A1E19A28F4D535001F1E07 /* DepartamentoCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7A1E19828F4D535001F1E07 /* DepartamentoCollectionCell.xib */; };
 		F7A6DA8228F0E94E0046647F /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7A6DA8128F0E94E0046647F /* iOSDropDown.framework */; };
+		F7E5785A28F887750083F6D0 /* ProductoCardCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E5785928F887750083F6D0 /* ProductoCardCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		F7A1E19728F4D535001F1E07 /* DepartamentoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartamentoCollectionCell.swift; sourceTree = "<group>"; };
 		F7A1E19828F4D535001F1E07 /* DepartamentoCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DepartamentoCollectionCell.xib; sourceTree = "<group>"; };
 		F7A6DA8128F0E94E0046647F /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7E5785928F887750083F6D0 /* ProductoCardCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductoCardCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,7 +178,6 @@
 				F79D64DF28E3A2B900B13087 /* ProductoCell.xib */,
 				F7270F5B28ECB0A100D27303 /* ProductoCollectionCell.xib */,
 				F7A1E19228F4BF0B001F1E07 /* AreaCollectionCell.xib */,
-				F7A1E19728F4D535001F1E07 /* DepartamentoCollectionCell.swift */,
 				F7A1E19828F4D535001F1E07 /* DepartamentoCollectionCell.xib */,
 			);
 			path = View;
@@ -236,6 +237,7 @@
 				F7270F5E28ECB21800D27303 /* ProductoCollectionViewController.swift */,
 				F7A1E18728F4A05D001F1E07 /* AreaCollectionViewController.swift */,
 				F7A1E19528F4D29E001F1E07 /* DepartamentoCollectionViewController.swift */,
+				F7E5785928F887750083F6D0 /* ProductoCardCollectionViewController.swift */,
 			);
 			path = CollectionController;
 			sourceTree = "<group>";
@@ -243,6 +245,7 @@
 		F7A1E18F28F4A19E001F1E07 /* CellView */ = {
 			isa = PBXGroup;
 			children = (
+				F7A1E19728F4D535001F1E07 /* DepartamentoCollectionCell.swift */,
 				F7270F5A28ECB0A100D27303 /* ProductoCollectionCell.swift */,
 				F7A1E19128F4BF0B001F1E07 /* AreaCollectionCell.swift */,
 				F79D64DE28E3A2B800B13087 /* ProductoCell.swift */,
@@ -388,6 +391,7 @@
 				F76F904A28DA3C9A00C8919A /* AppDelegate.swift in Sources */,
 				F783FBFB28DE30010004E356 /* UsuarioCell.swift in Sources */,
 				F79D64D728E3967A00B13087 /* Proveedor.swift in Sources */,
+				F7E5785A28F887750083F6D0 /* ProductoCardCollectionViewController.swift in Sources */,
 				F705EF2A28DB94A20092859D /* Conexion.swift in Sources */,
 				F7A1E19628F4D29E001F1E07 /* DepartamentoCollectionViewController.swift in Sources */,
 				F7270F5F28ECB21800D27303 /* ProductoCollectionViewController.swift in Sources */,

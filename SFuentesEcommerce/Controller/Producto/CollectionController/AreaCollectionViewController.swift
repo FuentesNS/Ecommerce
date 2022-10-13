@@ -12,6 +12,7 @@ private let reuseIdentifier = "AreaCollectionCell"
 class AreaCollectionViewController: UICollectionViewController {
 
     var areas: [Area] = []
+    var area = Area()
     var result = Result()
     
     override func viewDidLoad() {
@@ -52,7 +53,7 @@ class AreaCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AreaCollectionCell
     
-        let area: Area = areas[indexPath.row]
+        self.area = areas[indexPath.row]
         
         cell.NombreLabel.text = area.Nombre
         // Configure the cell
@@ -72,10 +73,21 @@ class AreaCollectionViewController: UICollectionViewController {
     
     // Uncomment this method to specify if the specified item should be selected
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        print("You selected cell #\(indexPath.item)!")
+        //print("You selected cell #\(indexPath.item)!")
+        self.area = self.areas[indexPath.row]
+        
         self.performSegue(withIdentifier: "AreaSegues", sender: self)
+    
         return true
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AreaSegues"{
+            
+            var DepartamentoViewController = segue.destination as?  DepartamentoCollectionViewController
+            DepartamentoViewController?.IdArea = self.area.IdArea!
+        }
     }
     
 

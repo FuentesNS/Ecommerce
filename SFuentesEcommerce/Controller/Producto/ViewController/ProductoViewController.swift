@@ -25,10 +25,13 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var DepartamentoDropDown: DropDown!
     
     
-    
     var IdProducto : Int = 0
+    var IdProveedor: Int = 0
+    var IdDepartamento: Int = 0
     var arrayProveedor: [String] = []
+    var arrayIdProveedor: [Int] = []
     var arrayDepartamento: [String] = []
+    var arrayIdDepartamento: [Int] = []
     var arrayId: [String] = []
     var proveedores: [Proveedor] = []
     var departamentos: [Departamento] = []
@@ -43,10 +46,22 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
         
         LoadDataProveedor()
         ProveedorDropDown.optionArray = arrayProveedor
-
+        ProveedorDropDown.optionIds = arrayIdProveedor
+        
+        ProveedorDropDown.didSelect { selectedText, index, id in
+            self.IdProveedor = id
+        }
+        
+        
         LoadDataDepartamento()
         DepartamentoDropDown.optionArray = arrayDepartamento
+        DepartamentoDropDown.optionIds = arrayIdDepartamento
 
+        DepartamentoDropDown.didSelect { selectedText, index, id in
+            self.IdDepartamento = id
+        }
+        
+        
         // Do any additional setup after loading the view.
     }
     
@@ -79,6 +94,7 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
     
     
     @IBAction func ActionButton(_ sender: UIButton) {
+        
         let producto = Producto()
         
         producto.Nombre = NombreInput.text
@@ -86,19 +102,20 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
         producto.Stock = Int(StockInput.text!)
         
         // propiedad de text field
-        //producto.proveedor.IdProveerdor = Int(IdProveedorInput.text!)
+        producto.proveedor.IdProveerdor = IdProveedor
+        producto.departamento.IdDepartamento = IdDepartamento
         
-        //producto.departamento.IdDepartamento = Int(IdDepartamentoInput.text!)
         producto.Descripcion = DescripcionInput.text
-        
-        
-        //let textButton = sender.currentTitle
         
         if sender.titleLabel?.text == "Agregar"{
             // function add product
-            Producto.Add(producto)
-            
-            print("Apartado de agregar producto")
+            //Producto.Add(producto)
+            var result = try Producto.Add(producto)
+            if result.Correct!{
+                print("Producto agregago")
+            }else{
+                print("Ocurrio un error")
+            }
             
         }else if sender.titleLabel?.text == "Actualizar"{
             Producto.Update(producto) 
@@ -115,15 +132,13 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
                 
                 NombreInput.text = producto.Nombre
                 PrecioUnitarioInput.text = String(producto.PrecioUnitario!)
-                StockInput.text
-                = String(producto.Stock!)
+                StockInput.text = String(producto.Stock!)
                 
-                // Propiedad siendo asignada de text field
+                // Propiedad siendo asignada de a dropdown
+                ProveedorDropDown.text = producto.proveedor.Nombre!
+                DepartamentoDropDown.text = producto.departamento.Nombre!
                 
-                //IdProveedorInput.text = String(producto.proveedor.IdProveerdor!)
-                //IdDepartamentoInput.text = String(producto.departamento.IdDepartamento!)
-                
-                DescripcionInput.text = producto.Descripcion
+                DescripcionInput.text = producto.Descripcion!
                 
                 ActionButton.setTitle("Actualizar", for: .normal)
                 ActionButton.backgroundColor = .yellow
@@ -142,7 +157,8 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
             proveedores = result.Objects as! [Proveedor]
             for proveedor in proveedores {
 
-                    arrayProveedor.append(proveedor.Nombre!)
+                arrayProveedor.append(proveedor.Nombre!)
+                arrayIdProveedor.append(proveedor.IdProveerdor!)
             }
         }
     }
@@ -154,6 +170,7 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
             for departamento in departamentos {
                 
                 arrayDepartamento.append(departamento.Nombre!)
+                arrayIdDepartamento.append(departamento.IdDepartamento!)
                 
             }
         }
