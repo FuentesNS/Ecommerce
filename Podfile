@@ -7,6 +7,7 @@ target 'SFuentesEcommerce' do
 
   pod 'iOSDropDown'	
   pod 'SwipeCellKit'
+  pod 'RadioGroup'
  
 
   #Pods for SFuentesEcommerce

@@ -1,20 +1,28 @@
 PODS:
   - iOSDropDown (0.4.0)
+  - RadioGroup (1.4.4):
+    - SweeterSwift
+  - SweeterSwift (1.2.1)
   - SwipeCellKit (2.7.1)
 
 DEPENDENCIES:
   - iOSDropDown
+  - RadioGroup
   - SwipeCellKit
 
 SPEC REPOS:
   trunk:
     - iOSDropDown
+    - RadioGroup
+    - SweeterSwift
     - SwipeCellKit
 
 SPEC CHECKSUMS:
   iOSDropDown: ce9daa584eaa5567cafc1b633e3cc7eb6d9cea42
+  RadioGroup: 8541fae4af7ee54125a9e237105982c1fbeedaa7
+  SweeterSwift: 61baeda1c0c27d1dc57c8112c3d6a82e5aff3139
   SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
 
-PODFILE CHECKSUM: 0b341beb4f9363b7885da069017bd39f433d6553
+PODFILE CHECKSUM: 0dbfcfa0c80c66d5021380e7f4f97f644c7e1fe7
 
 COCOAPODS: 1.11.3

@@ -39,7 +39,7 @@ class Producto{
                 
                 sqlite3_bind_int(statement, 3, Int32(producto.Stock! as NSInteger))
                 
-                sqlite3_bind_int(statement, 4, Int32(producto.proveedor.IdProveerdor! as NSInteger))
+                sqlite3_bind_int(statement, 4, Int32(producto.proveedor.IdProveedor! as NSInteger))
                 
                 sqlite3_bind_int(statement, 5, Int32(producto.departamento.IdDepartamento! as NSInteger))
                 
@@ -127,7 +127,7 @@ class Producto{
                     producto.Nombre = String(cString: sqlite3_column_text(statement!, 1))
                     producto.PrecioUnitario = Int(sqlite3_column_int(statement, 2))
                     producto.Stock = Int(sqlite3_column_int(statement, 3))
-                    producto.proveedor.IdProveerdor = Int(sqlite3_column_int(statement, 4))
+                    producto.proveedor.IdProveedor = Int(sqlite3_column_int(statement, 4))
                     producto.departamento.IdDepartamento = Int(sqlite3_column_int(statement, 5))
                     producto.Descripcion = String(cString: sqlite3_column_text(statement, 6))
                     
@@ -167,7 +167,7 @@ class Producto{
                     producto.Nombre = String(cString: sqlite3_column_text(statement!, 1))
                     producto.PrecioUnitario = Int(sqlite3_column_int(statement, 2))
                     producto.Stock = Int(sqlite3_column_int(statement, 3))
-                    producto.proveedor.IdProveerdor = Int(sqlite3_column_int(statement, 4))
+                    producto.proveedor.IdProveedor = Int(sqlite3_column_int(statement, 4))
                     producto.departamento.IdDepartamento = Int(sqlite3_column_int(statement, 5))
                     producto.Descripcion = String(cString: sqlite3_column_text(statement, 6))
                     
@@ -210,7 +210,7 @@ class Producto{
                     producto.PrecioUnitario = Int(sqlite3_column_int(statement, 2))
                     producto.Stock = Int(sqlite3_column_int(statement, 3))
                     
-                    producto.proveedor.IdProveerdor = Int(sqlite3_column_int(statement, 4))
+                    producto.proveedor.IdProveedor = Int(sqlite3_column_int(statement, 4))
                     producto.proveedor.Nombre = String(cString: sqlite3_column_text(statement!, 5))
 
                     producto.departamento.IdDepartamento = Int(sqlite3_column_int(statement, 6))

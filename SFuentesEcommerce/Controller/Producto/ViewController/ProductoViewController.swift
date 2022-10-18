@@ -102,7 +102,7 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
         producto.Stock = Int(StockInput.text!)
         
         // propiedad de text field
-        producto.proveedor.IdProveerdor = IdProveedor
+        producto.proveedor.IdProveedor = IdProveedor
         producto.departamento.IdDepartamento = IdDepartamento
         
         producto.Descripcion = DescripcionInput.text
@@ -158,7 +158,7 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
             for proveedor in proveedores {
 
                 arrayProveedor.append(proveedor.Nombre!)
-                arrayIdProveedor.append(proveedor.IdProveerdor!)
+                arrayIdProveedor.append(proveedor.IdProveedor!)
             }
         }
     }
