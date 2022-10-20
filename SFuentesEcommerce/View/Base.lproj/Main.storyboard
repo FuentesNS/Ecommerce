@@ -587,7 +587,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="Iniciar Sesión "/>
                                         <connections>
-                                            <action selector="SingUpButton" destination="1ke-jH-AX9" eventType="touchUpInside" id="bQb-9F-DgW"/>
+                                            <action selector="LoginButton" destination="1ke-jH-AX9" eventType="touchUpInside" id="lJi-If-xpw"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fae-5f-vkJ">
