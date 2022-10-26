@@ -64,14 +64,14 @@ class Usuario{
         
         let result = Result()
         
-        let query = #"UPDATE Usuario SET UserName= '?', Nombre= ?, ApellidoPaterno= ?, ApellidoMaterno= ?, Email= ?, Password= ?  WHERE IdUsuario = \#(usuario.IdUsuario!)"#
+        let query = "UPDATE Usuario SET UserName= ?, Nombre= ?, ApellidoPaterno= ?, ApellidoMaterno= ?, Email= ?, Password= ?  WHERE IdUsuario = \(usuario.IdUsuario!)"
         
         var statement: OpaquePointer?
         let conexion = Conexion.init()
         do{
             if sqlite3_prepare_v2(conexion.db, query, -1, &statement, nil) == SQLITE_OK{
                 
-                //sqlite3_bind_int(statement, 1, (usuario.IdUsuario as NSInteger). )
+                //sqlite3_bind_int(statement, 1, (usuario.IdUsuario as NSInteger).)
                 sqlite3_bind_text(statement, 1, (usuario.UserName! as NSString).utf8String, -1, nil)
                 sqlite3_bind_text(statement, 2, (usuario.Nombre! as NSString).utf8String, -1, nil)
                 sqlite3_bind_text(statement, 3, (usuario.ApellidoPaterno! as NSString).utf8String, -1, nil)

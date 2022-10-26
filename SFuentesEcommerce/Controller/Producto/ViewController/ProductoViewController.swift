@@ -13,6 +13,8 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
     
     let imagePicker = UIImagePickerController()
 
+    
+    
     @IBOutlet weak var NombreInput: UITextField!
     @IBOutlet weak var PrecioUnitarioInput: UITextField!
     @IBOutlet weak var StockInput: UITextField!
@@ -20,7 +22,9 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
     //@IBOutlet weak var IdDepartamentoInput: UITextField!
     @IBOutlet weak var DescripcionInput: UITextField!
     @IBOutlet weak var ActionButton: UIButton!
+    
     @IBOutlet weak var PhotoProducto: UIImageView!
+    
     @IBOutlet weak var ProveedorDropDown: DropDown!
     @IBOutlet weak var DepartamentoDropDown: DropDown!
     
@@ -97,6 +101,7 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
         
         let producto = Producto()
         
+        producto.IdProducto = IdProducto
         producto.Nombre = NombreInput.text
         producto.PrecioUnitario = Int(PrecioUnitarioInput.text!)
         producto.Stock = Int(StockInput.text!)
@@ -106,10 +111,17 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
         producto.departamento.IdDepartamento = IdDepartamento
         
         producto.Descripcion = DescripcionInput.text
+
+        if PhotoProducto.restorationIdentifier == K.DefaultImageProduct{
+            producto.Imagen = ""
+        } else{
+            let image : UIImage = PhotoProducto.image!
+            let imageData: NSData = image.pngData()! as NSData
+            producto.Imagen = imageData.base64EncodedString(options: .lineLength64Characters)
+        }
         
         if sender.titleLabel?.text == "Agregar"{
-            // function add product
-            //Producto.Add(producto)
+
             var result = try Producto.Add(producto)
             if result.Correct!{
                 print("Producto agregago")
@@ -118,7 +130,12 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
             }
             
         }else if sender.titleLabel?.text == "Actualizar"{
-            Producto.Update(producto) 
+            Producto.Update(producto)
+            if result.Correct!{
+                print("Producto actulizado")
+            }else{
+                print("Ocurrio un error")
+            }
         }
         
     }
@@ -135,15 +152,21 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
                 StockInput.text = String(producto.Stock!)
                 
                 // Propiedad siendo asignada de a dropdown
-                ProveedorDropDown.text = producto.proveedor.Nombre!
-                DepartamentoDropDown.text = producto.departamento.Nombre!
+                ProveedorDropDown.text = String(producto.proveedor.Nombre)
+                IdProveedor = producto.proveedor.IdProveedor!
+
                 
+                DepartamentoDropDown.text = String(producto.departamento.Nombre)
+                IdDepartamento = producto.departamento.IdDepartamento!
+
                 DescripcionInput.text = producto.Descripcion!
+                IdProveedor = producto.proveedor.IdProveedor!
                 
                 ActionButton.setTitle("Actualizar", for: .normal)
                 ActionButton.backgroundColor = .yellow
                 
             }else{
+                PhotoProducto.image = UIImage(named: "ProductoPhoto")
                 ActionButton.setTitle("Agregar", for: .normal)
                 ActionButton.backgroundColor = .green
             }
@@ -157,7 +180,7 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
             proveedores = result.Objects as! [Proveedor]
             for proveedor in proveedores {
 
-                arrayProveedor.append(proveedor.Nombre!)
+                arrayProveedor.append(proveedor.Nombre)
                 arrayIdProveedor.append(proveedor.IdProveedor!)
             }
         }
@@ -169,7 +192,7 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
             departamentos = result.Objects as! [Departamento]
             for departamento in departamentos {
                 
-                arrayDepartamento.append(departamento.Nombre!)
+                arrayDepartamento.append(departamento.Nombre)
                 arrayIdDepartamento.append(departamento.IdDepartamento!)
                 
             }

@@ -243,8 +243,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6mE-Tx-xbD" userLabel="ViewPhoto">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="222"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="basket.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qOE-Gu-Wjc">
-                                                <rect key="frame" x="109" y="30" width="175" height="141.66666666666666"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProductoPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="qOE-Gu-Wjc">
+                                                <rect key="frame" x="109" y="30" width="175" height="142"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="175" id="9Uu-16-96X"/>
                                                 </constraints>
@@ -272,31 +272,31 @@
                                             <constraint firstItem="8GH-Dw-EvN" firstAttribute="top" secondItem="qOE-Gu-Wjc" secondAttribute="bottom" id="zR6-Pt-cdD"/>
                                         </constraints>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8Yk-EG-GkP">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8Yk-EG-GkP">
                                         <rect key="frame" x="0.0" y="222" width="393" height="222"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n9l-dj-oqf">
-                                                <rect key="frame" x="0.0" y="0.0" width="393" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="29.666666666666668"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Precio unitario" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QAn-CJ-DFG">
-                                                <rect key="frame" x="0.0" y="44" width="393" height="23.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="39.666666666666686" width="393" height="29.666666666666671"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Productos en stock" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vHI-5W-6nb">
-                                                <rect key="frame" x="0.0" y="77.333333333333314" width="393" height="34"/>
+                                                <rect key="frame" x="0.0" y="79.333333333333314" width="393" height="29.666666666666671"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Proveedor" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bnj-sG-wVP" customClass="JRDropDown">
-                                                <rect key="frame" x="0.0" y="121.3333333333333" width="393" height="23.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="119" width="393" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Departamento" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P9h-EA-Cey" customClass="JRDropDown">
-                                                <rect key="frame" x="0.0" y="154.66666666666669" width="393" height="34"/>
+                                                <rect key="frame" x="0.0" y="159" width="393" height="29.666666666666657"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
@@ -1085,6 +1085,7 @@
     <resources>
         <image name="ImageLogo" width="426.66665649414062" height="331.33334350585938"/>
         <image name="ImageNotFound" width="99.333335876464844" height="56.333332061767578"/>
+        <image name="ProductoPhoto" width="166.66667175292969" height="166.66667175292969"/>
         <image name="basket.fill" catalog="system" width="128" height="108"/>
         <image name="bus.fill" catalog="system" width="128" height="122"/>
         <image name="camera" catalog="system" width="128" height="93"/>

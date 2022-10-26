@@ -59,6 +59,11 @@ class ProductoTableViewController: UITableViewController {
         cell.StockLabel.text = String(producto.Stock!)
         cell.DescriptionLabel.text = String(producto.Descripcion!)
         
+        let imageData = Data(base64Encoded: producto.Imagen!, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)!
+        
+        cell.ProductoImage.image = UIImage(data: imageData)
+        
+        
         return cell
     }
     

@@ -10,7 +10,7 @@ import SQLite3
 
 class Departamento{
     var IdDepartamento: Int?
-    var Nombre: String?
+    var Nombre: String = ""
     
     var area = Area()
     

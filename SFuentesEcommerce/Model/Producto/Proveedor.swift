@@ -9,9 +9,9 @@ import Foundation
 import SQLite3
 
 class Proveedor{
-    var IdProveedor: Int? = nil
-    var Nombre: String? = nil
-    var Telefono: String? = nil
+    var IdProveedor: Int?
+    var Nombre: String = ""
+    var Telefono: String?
     
     
     
@@ -27,7 +27,7 @@ class Proveedor{
         do{
             if sqlite3_prepare_v2(conexion.db, query, -1, &statement, nil) == SQLITE_OK{
                 
-                sqlite3_bind_text(statement, 1, (proveedor.Nombre! as NSString).utf8String, -1, nil)
+                sqlite3_bind_text(statement, 1, (proveedor.Nombre as NSString).utf8String, -1, nil)
                 sqlite3_bind_text(statement, 2, (proveedor.Telefono! as NSString).utf8String, -1, nil)
                 
                 if sqlite3_step(statement) == SQLITE_DONE{
@@ -64,7 +64,7 @@ class Proveedor{
             do{
                 if sqlite3_prepare_v2(conexion.db, query, -1, &statement, nil) == SQLITE_OK{
                     
-                    sqlite3_bind_text(statement, 1, (proveedor.Nombre! as NSString).utf8String, -1, nil)
+                    sqlite3_bind_text(statement, 1, (proveedor.Nombre as NSString).utf8String, -1, nil)
                     sqlite3_bind_text(statement, 2, (proveedor.Telefono! as NSString).utf8String, -1, nil)
                     
                     if sqlite3_step(statement) == SQLITE_DONE{

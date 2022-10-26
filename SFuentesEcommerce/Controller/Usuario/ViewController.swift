@@ -12,16 +12,10 @@ class ViewController: UIViewController {
     var IdUsuario : Int = 0
 
     @IBOutlet weak var NameInput: UITextField!
-    
     @IBOutlet weak var ApellidoPaternoInput: UITextField!
-        
     @IBOutlet weak var ApellidoMaternoInput: UITextField!
-    
     @IBOutlet weak var NameUserInput: UITextField!
-    
     @IBOutlet weak var EmailInput: UITextField!
-    
-   
     @IBOutlet weak var PasswordInput: UITextField!
    
     

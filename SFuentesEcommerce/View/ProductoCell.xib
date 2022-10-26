@@ -78,6 +78,7 @@
             <connections>
                 <outlet property="DescriptionLabel" destination="R17-8w-Ptc" id="79D-uz-YdW"/>
                 <outlet property="NameLabel" destination="ms2-nd-TFf" id="5ft-s6-Ja4"/>
+                <outlet property="ProductoImage" destination="Fqu-ti-CTu" id="iLL-s5-N2v"/>
                 <outlet property="StockLabel" destination="Hp6-su-y59" id="uXt-PX-LNE"/>
                 <outlet property="UnitPriceLabel" destination="01I-HQ-cp4" id="K0G-vS-NxG"/>
             </connections>

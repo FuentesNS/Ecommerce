@@ -15,11 +15,13 @@ class ProductoCell: SwipeTableViewCell {
     @IBOutlet weak var UnitPriceLabel: UILabel!
     @IBOutlet weak var StockLabel: UILabel!
     @IBOutlet weak var DescriptionLabel: UILabel!
-    
+    @IBOutlet weak var ProductoImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+//        let imageData = Data(base64Encoded: image, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)!
+//        ProductoImage.image = UIImage(data: imageData)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -27,5 +29,6 @@ class ProductoCell: SwipeTableViewCell {
 
         // Configure the view for the selected state
     }
+    
     
 }

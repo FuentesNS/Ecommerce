@@ -28,7 +28,7 @@ class ProveedorViewController: UIViewController {
         var result = Result()
         
         
-        proveedor.Nombre = NombreInput.text
+        proveedor.Nombre = NombreInput.text!
         proveedor.Telefono = TelefonoInput.text
         
         if sender.titleLabel?.text == "Agregar"{
