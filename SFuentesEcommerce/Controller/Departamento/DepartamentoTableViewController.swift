@@ -1,37 +1,40 @@
 //
-//  ProveedorTableViewController.swift
+//  DepartamentoTableViewController.swift
 //  SFuentesEcommerce
 //
-//  Created by MacBookMBA1 on 17/10/22.
+//  Created by MacBookMBA1 on 26/10/22.
 //
 
 import UIKit
 import SwipeCellKit
 
-class ProveedorTableViewController: UITableViewController {
+class DepartamentoTableViewController: UITableViewController {
     
     var result = Result()
-    var proveedores:  [Proveedor] = []
-    var proveedor = Proveedor()
+    var departamentos : [Departamento] = []
+    var departamento = Departamento()
+    
+    var IdDepartamento: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         LoadData()
         
-        
-        tableView.register(UINib(nibName: "ProveedorViewCell", bundle: nil), forCellReuseIdentifier: "ProveedorCell")
+        tableView.register(UINib(nibName: "DepartamentoViewCell", bundle: nil), forCellReuseIdentifier: K.NameCellDepartamento)
     }
     
     func LoadData(){
         do{
-            result = try! Proveedor.GetAll()
+            result = try! Departamento.GetAll()
             if result.Correct!{
-                proveedores = result.Objects as! [Proveedor]
+                departamentos = result.Objects as! [Departamento]
                 tableView.reloadData()
             }
-        }catch{
+        } catch {
             print("Ocurrio un error")
         }
+        
     }
     // MARK: - Table view data source
     
@@ -42,43 +45,44 @@ class ProveedorTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return proveedores.count
+        return departamentos.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProveedorCell", for: indexPath) as! ProveedorViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.NameCellDepartamento, for: indexPath) as! DepartamentoViewCell
         
         cell.delegate = self
         
-        let proveedor: Proveedor = proveedores[indexPath.row]
+        let departamento : Departamento = departamentos[indexPath.row]
         
-        cell.NombreLabel.text = proveedor.Nombre
-        cell.TelefonoLabel.text = proveedor.Telefono
+        cell.NombreLabel.text = departamento.Nombre
+        cell.AreaLabel.text = departamento.area.Nombre
+        
         
         return cell
     }
     
 }
 
-extension ProveedorTableViewController: SwipeTableViewCellDelegate{
+extension DepartamentoTableViewController: SwipeTableViewCellDelegate{
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeCellKit.SwipeActionsOrientation) -> [SwipeCellKit.SwipeAction]? {
         
-        if orientation == .left{
+        if orientation == .left {
             let updaeAction = SwipeAction(style: .default, title: "Actualizar"){ action, indexPath in
                 
                 //Send to view update
-                self.proveedor = self.proveedores[indexPath.row]
-                self.performSegue(withIdentifier: "ProveedorSegues", sender: self)
+                self.departamento = self.departamentos[indexPath.row]
+                self.performSegue(withIdentifier: "DepartamentoSegues", sender: self)
             }
             return[updaeAction]
-        }else if orientation == .right{
+        } else if orientation == .right{
             let deleteAction = SwipeAction(style: .destructive, title: "Eliminar"){action, indexPath in
                 
                 
                 //Implempent Delete method
-                let proveedor : Proveedor = self.proveedores[indexPath.row]
-                Proveedor.Delete(proveedor.IdProveedor!)
+                let departamento : Departamento = self.departamentos[indexPath.row]
+                Departamento.Delete(departamento.IdDepartamento!)
                 self.LoadData()
             }
             return[deleteAction]
@@ -88,10 +92,10 @@ extension ProveedorTableViewController: SwipeTableViewCellDelegate{
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ProveedorSegues"{
+        if segue.identifier == "DepartamentoSegues"{
             
-            let proveedorViewController = segue.destination as? ProveedorViewController
-            proveedorViewController?.IdProveedor = self.proveedor.IdProveedor!
+            let departamentoViewController = segue.destination as? DepartamentoViewController
+            departamentoViewController?.IdDepartamento = self.departamento.IdDepartamento!
             
         }
     }

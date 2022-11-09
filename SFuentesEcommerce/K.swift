@@ -10,4 +10,5 @@ import Foundation
 struct K {
     static let DefaultImageNotFound = "ImageNotFound"
     static let DefaultImageProduct = "ProductoPhoto"
+    static let NameCellDepartamento = "DepartamentoCell"
 }

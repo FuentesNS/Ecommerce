@@ -85,7 +85,7 @@ class AreaCollectionViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AreaSegues"{
             
-            var DepartamentoViewController = segue.destination as?  DepartamentoCollectionViewController
+            let DepartamentoViewController = segue.destination as?  DepartamentoCollectionViewController
             DepartamentoViewController?.IdArea = self.area.IdArea!
         }
     }

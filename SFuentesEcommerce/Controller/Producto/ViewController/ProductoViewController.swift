@@ -112,6 +112,7 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
         
         producto.Descripcion = DescripcionInput.text
 
+        let iden = PhotoProducto.restorationIdentifier
         if PhotoProducto.restorationIdentifier == K.DefaultImageProduct{
             producto.Imagen = ""
         } else{
@@ -141,9 +142,9 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
     }
  
     func Validate(){
-        if IdProducto != 0{
+        if IdProducto != 0{  //UPDATE
             let result: Result = Producto.GetById(IdProducto)
-            if result.Correct!{
+            if result.Correct!{  //VALIDA PRODUCT
                 
                 let producto = result.Object as! Producto
                 
@@ -164,12 +165,12 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
                 
                 ActionButton.setTitle("Actualizar", for: .normal)
                 ActionButton.backgroundColor = .yellow
-                
-            }else{
-                PhotoProducto.image = UIImage(named: "ProductoPhoto")
-                ActionButton.setTitle("Agregar", for: .normal)
-                ActionButton.backgroundColor = .green
             }
+        }else{
+            PhotoProducto.image = UIImage(named: "ProductoPhoto")
+            //PhotoProducto.restorationIdentifier = "ProductoPhoto"
+            ActionButton.setTitle("Agregar", for: .normal)
+            ActionButton.backgroundColor = .green
         }
     }
     

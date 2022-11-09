@@ -11,7 +11,7 @@ import SQLite3
 
 class Area{
     var IdArea: Int?
-    var Nombre: String?
+    var Nombre: String = ""
     
     
     static func GetAll() -> Result{

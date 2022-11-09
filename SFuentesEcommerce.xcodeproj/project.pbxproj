@@ -19,6 +19,10 @@
 		F72AC57A28FF1814005B6141 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F72AC57928FF1814005B6141 /* GoogleService-Info.plist */; };
 		F72AC57D28FF1C92005B6141 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F72AC57C28FF1C92005B6141 /* FirebaseAuth */; };
 		F72AC57F28FF1C92005B6141 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F72AC57E28FF1C92005B6141 /* FirebaseFirestore */; };
+		F745C2A22909A11D000B93E6 /* DepartamentoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F745C2A12909A11D000B93E6 /* DepartamentoTableViewController.swift */; };
+		F745C2A42909A13C000B93E6 /* DepartamentoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F745C2A32909A13C000B93E6 /* DepartamentoViewController.swift */; };
+		F745C2A72909A16E000B93E6 /* DepartamentoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F745C2A52909A16E000B93E6 /* DepartamentoViewCell.swift */; };
+		F745C2A82909A16E000B93E6 /* DepartamentoViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F745C2A62909A16E000B93E6 /* DepartamentoViewCell.xib */; };
 		F75380CA28F9DF5900BCE157 /* ProductoAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75380C928F9DF5900BCE157 /* ProductoAddViewController.swift */; };
 		F7678AD1290713EE00110466 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7678AD0290713EE00110466 /* K.swift */; };
 		F76F904A28DA3C9A00C8919A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76F904928DA3C9A00C8919A /* AppDelegate.swift */; };
@@ -66,6 +70,10 @@
 		F7270F5B28ECB0A100D27303 /* ProductoCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductoCollectionCell.xib; sourceTree = "<group>"; };
 		F7270F5E28ECB21800D27303 /* ProductoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductoCollectionViewController.swift; sourceTree = "<group>"; };
 		F72AC57928FF1814005B6141 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F745C2A12909A11D000B93E6 /* DepartamentoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartamentoTableViewController.swift; sourceTree = "<group>"; };
+		F745C2A32909A13C000B93E6 /* DepartamentoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartamentoViewController.swift; sourceTree = "<group>"; };
+		F745C2A52909A16E000B93E6 /* DepartamentoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartamentoViewCell.swift; sourceTree = "<group>"; };
+		F745C2A62909A16E000B93E6 /* DepartamentoViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DepartamentoViewCell.xib; sourceTree = "<group>"; };
 		F75380C928F9DF5900BCE157 /* ProductoAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductoAddViewController.swift; sourceTree = "<group>"; };
 		F7678AD0290713EE00110466 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		F76F904628DA3C9A00C8919A /* SFuentesEcommerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SFuentesEcommerce.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +147,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F745C2A02909A0E7000B93E6 /* Departamento */ = {
+			isa = PBXGroup;
+			children = (
+				F745C2A12909A11D000B93E6 /* DepartamentoTableViewController.swift */,
+				F745C2A32909A13C000B93E6 /* DepartamentoViewController.swift */,
+				F745C2A52909A16E000B93E6 /* DepartamentoViewCell.swift */,
+			);
+			path = Departamento;
+			sourceTree = "<group>";
+		};
 		F76F903D28DA3C9A00C8919A = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				F70D849628EDF4CE00DF92E8 /* LoginViewController.swift */,
+				F745C2A02909A0E7000B93E6 /* Departamento */,
 				F782D34128FDD0F200EBA229 /* Proveedor */,
 				F79D64E428E3A30E00B13087 /* Usuario */,
 				F79D64E528E3A32200B13087 /* Producto */,
@@ -203,10 +222,11 @@
 				F76F904F28DA3C9A00C8919A /* Main.storyboard */,
 				F783FBFA28DE30010004E356 /* UsuarioCell.xib */,
 				F79D64DF28E3A2B900B13087 /* ProductoCell.xib */,
-				F7270F5B28ECB0A100D27303 /* ProductoCollectionCell.xib */,
 				F782D34728FDD1C300EBA229 /* ProveedorViewCell.xib */,
-				F7A1E19228F4BF0B001F1E07 /* AreaCollectionCell.xib */,
+				F7270F5B28ECB0A100D27303 /* ProductoCollectionCell.xib */,
+				F745C2A62909A16E000B93E6 /* DepartamentoViewCell.xib */,
 				F7A1E19828F4D535001F1E07 /* DepartamentoCollectionCell.xib */,
+				F7A1E19228F4BF0B001F1E07 /* AreaCollectionCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -214,8 +234,8 @@
 		F782D34128FDD0F200EBA229 /* Proveedor */ = {
 			isa = PBXGroup;
 			children = (
-				F782D34228FDD12300EBA229 /* ProveedorViewController.swift */,
 				F782D34428FDD15600EBA229 /* ProveedorTableViewController.swift */,
+				F782D34228FDD12300EBA229 /* ProveedorViewController.swift */,
 				F782D34628FDD1C300EBA229 /* ProveedorViewCell.swift */,
 			);
 			path = Proveedor;
@@ -376,6 +396,7 @@
 				F7270F5D28ECB0A100D27303 /* ProductoCollectionCell.xib in Resources */,
 				F76F905628DA3C9B00C8919A /* Assets.xcassets in Resources */,
 				F72AC57A28FF1814005B6141 /* GoogleService-Info.plist in Resources */,
+				F745C2A82909A16E000B93E6 /* DepartamentoViewCell.xib in Resources */,
 				F76F905128DA3C9A00C8919A /* Main.storyboard in Resources */,
 				F7A1E19A28F4D535001F1E07 /* DepartamentoCollectionCell.xib in Resources */,
 			);
@@ -450,9 +471,12 @@
 				F79D64DD28E39DB300B13087 /* ProductoTableViewController.swift in Sources */,
 				F7A1E19328F4BF0B001F1E07 /* AreaCollectionCell.swift in Sources */,
 				F76F904C28DA3C9A00C8919A /* SceneDelegate.swift in Sources */,
+				F745C2A72909A16E000B93E6 /* DepartamentoViewCell.swift in Sources */,
+				F745C2A42909A13C000B93E6 /* DepartamentoViewController.swift in Sources */,
 				F712FAE928DCCFBA0082A2A2 /* Result.swift in Sources */,
 				F79D64D328E3954600B13087 /* Producto.swift in Sources */,
 				F782D34528FDD15600EBA229 /* ProveedorTableViewController.swift in Sources */,
+				F745C2A22909A11D000B93E6 /* DepartamentoTableViewController.swift in Sources */,
 				F76F906428DA3D6B00C8919A /* Usuario.swift in Sources */,
 				F79D64D528E395DD00B13087 /* Area.swift in Sources */,
 				F79D64E028E3A2B900B13087 /* ProductoCell.swift in Sources */,
